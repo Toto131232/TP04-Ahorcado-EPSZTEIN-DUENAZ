@@ -15,6 +15,10 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        List<string> palabra=Palabrabd.IniciarPalabra();
+        ViewBag.palabra=palabra;
         return View();
     }
+    
+
 }
