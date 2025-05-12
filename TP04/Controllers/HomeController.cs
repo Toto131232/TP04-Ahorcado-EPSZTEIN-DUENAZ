@@ -15,8 +15,18 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        List<string> palabra=Palabrabd.IniciarPalabra();
+        string[] palabra=Palabrabd.IniciarPalabra();
         ViewBag.palabra=palabra;
+        return View();
+    }
+    public IActionResult IngresarLetras(char letra)
+    {
+        List<int> PosicionesLetras=Palabrabd.VerificarLetra(letra);
+        return View();
+    }
+    public IActionResult IngresarPalabras(string palabra)
+    {
+        bool laPalabraEsCorrecta=Palabrabd.VerificarPalabra(palabra);
         return View();
     }
     

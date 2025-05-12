@@ -1,39 +1,51 @@
 public class Palabrabd
 {
-public List<string> PalabraAAdivinar {get; private set;}=IniciarPalabra();
+public static new string[] PalabraAAdivinar{get; private set;}=IniciarPalabra();
 
-public static List<string> IniciarPalabra()
+public static string[] IniciarPalabra()
 {
-    List<string> palabra=new List<string>();
-    palabra.Add("GATO");
-    palabra.Add("PERRO");
-    palabra.Add("CASA");
-    palabra.Add("ARBOL");
-    palabra.Add("CIELO");
-    palabra.Add("RIO");
-    palabra.Add("FLOR");
-    palabra.Add("LUNA");
-    palabra.Add("SOL");
-    palabra.Add("MAR");
-    palabra.Add("MONTAÑA");
-    palabra.Add("NUBE");
-    palabra.Add("ESTRELLA");
-    palabra.Add("FUEGO");
-    palabra.Add("TIERRA");
-    palabra.Add("VIENTO");
-
+  string[] palabra = new string[100]
+    {"GATO", "PERRO", "CASA", "ARBOL", "LIBRO", "ESCUELA", "SILLA", "MESA", "VENTANA", "PUERTA",
+    "ZAPATO", "LAPIZ", "RELOJ", "CAMISA", "PANTALON", "CHAQUETA", "COCINA", "BAÑO", "TELEFONO", "COMPUTADORA",
+    "TECLADO", "RATON", "PANTALLA", "CABLE", "AURICULAR", "CIUDAD", "PAIS", "MAPA", "PLANETA", "LUNA",
+    "SOL", "ESTRELLA", "CIELO", "NUBE", "LLUVIA", "VIENTO", "FUEGO", "AGUA", "TIERRA", "ARENA",
+    "MONTANA", "RIO", "MAR", "LAGO", "ISLA", "BOSQUE", "SELVA", "FLOR", "ARROZ", "CARNE",
+    "PESCADO", "PAN", "LECHE", "HUEVO", "FRUTA", "MANZANA", "PERA", "BANANA", "NARANJA", "UVA",
+    "ZANAHORIA", "TOMATE", "LECHUGA", "PAPA", "CEBOLLA", "AJI", "AZUCAR", "SAL", "ACEITE", "VINAGRE",
+    "COCHE", "BICICLETA", "AVION", "BARCO", "TREN", "CAMION", "MOTO", "TRAFICO", "CALLE", "CARRETERA",
+    "SEMÁFORO", "PUENTE", "TUNEL", "ESPEJO", "LUNA", "CRISTAL", "BOTE", "VELA", "MOTOR", "RUEDA",
+    "BOLIGRAFO", "CUADERNO", "MOCHILA", "ESPEJO", "JUGUETE", "PELOTA", "MUÑECA", "ROMPECABEZAS", "PINTURA", "INSTRUMENTO"};
+    int num;
+    Random r=new Random();
+    num=r.Next(0,palabra.Count()-1);
+    string palabras=palabra[num];
     return palabra;
 }
 
-public bool VerificarLetra(char letra)
+public static List<int> VerificarLetra(char letra)
 {
-    bool LetraCorrecta=false;
-
-    foreach(string palabra in PalabraAAdivinar)
+    List<int>PosicionesCorrectas=new List<int>();
+    for(int i=0;i<=PalabraAAdivinar.Length;i++)
     {
-        
+        if(letra.ToString()==PalabraAAdivinar[i])
+        {
+            PosicionesCorrectas.Add(i);
+        }
     }
-    return LetraCorrecta;
+    return PosicionesCorrectas;
 }
+public static bool VerificarPalabra(string palabra)
+{
+    bool verificacionPalabra=false;
+    foreach(string palabras in PalabraAAdivinar)
+    {
+        if(palabra==palabras)
+    {
+        verificacionPalabra=true;
+    }
+    }
+    return verificacionPalabra;
+}
+
 
 }
