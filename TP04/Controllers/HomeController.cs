@@ -22,11 +22,13 @@ public class HomeController : Controller
     public IActionResult IngresarLetras(char letra)
     {
         List<int> PosicionesLetras=Palabrabd.VerificarLetra(letra);
+        ViewBag.PosicionesLetras=PosicionesLetras;
         return View();
     }
     public IActionResult IngresarPalabras(string palabra)
     {
         bool laPalabraEsCorrecta=Palabrabd.VerificarPalabra(palabra);
+        ViewBag.laPalabraEsCorrecta=laPalabraEsCorrecta;
         return View();
     }
     

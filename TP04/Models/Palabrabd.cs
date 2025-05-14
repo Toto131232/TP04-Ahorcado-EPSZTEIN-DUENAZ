@@ -4,14 +4,14 @@ public static new string[] PalabraAAdivinar{get; private set;}=IniciarPalabra();
 
 public static string[] IniciarPalabra()
 {
-  string[] palabra = new string[100]
+  string[]  palabra = new string[100] // esta mal esto devuelve todas las palabras y  abajo falta solo contador y cuando llegue a 
     {"GATO", "PERRO", "CASA", "ARBOL", "LIBRO", "ESCUELA", "SILLA", "MESA", "VENTANA", "PUERTA",
     "ZAPATO", "LAPIZ", "RELOJ", "CAMISA", "PANTALON", "CHAQUETA", "COCINA", "BAÑO", "TELEFONO", "COMPUTADORA",
     "TECLADO", "RATON", "PANTALLA", "CABLE", "AURICULAR", "CIUDAD", "PAIS", "MAPA", "PLANETA", "LUNA",
-    "SOL", "ESTRELLA", "CIELO", "NUBE", "LLUVIA", "VIENTO", "FUEGO", "AGUA", "TIERRA", "ARENA",
+    "SOL", "ESTRELLA", "CIELO", "NUBE", "LLUVIA", "VIENTO", "FUEGO", "PEPE", "TIERRA", "ARENA",
     "MONTANA", "RIO", "MAR", "LAGO", "ISLA", "BOSQUE", "SELVA", "FLOR", "ARROZ", "CARNE",
     "PESCADO", "PAN", "LECHE", "HUEVO", "FRUTA", "MANZANA", "PERA", "BANANA", "NARANJA", "UVA",
-    "ZANAHORIA", "TOMATE", "LECHUGA", "PAPA", "CEBOLLA", "AJI", "AZUCAR", "SAL", "ACEITE", "VINAGRE",
+    "ZANAHORIA", "DUDU", "LECHUGA", "PAPA", "CEBOLLA", "AJI", "AZUCAR", "SAL", "ACEITE", "VINAGRE",
     "COCHE", "BICICLETA", "AVION", "BARCO", "TREN", "CAMION", "MOTO", "TRAFICO", "CALLE", "CARRETERA",
     "SEMÁFORO", "PUENTE", "TUNEL", "ESPEJO", "LUNA", "CRISTAL", "BOTE", "VELA", "MOTOR", "RUEDA",
     "BOLIGRAFO", "CUADERNO", "MOCHILA", "ESPEJO", "JUGUETE", "PELOTA", "MUÑECA", "ROMPECABEZAS", "PINTURA", "INSTRUMENTO"};
@@ -42,6 +42,10 @@ public static bool VerificarPalabra(string palabra)
         if(palabra==palabras)
     {
         verificacionPalabra=true;
+        if (verificacionPalabra== true )
+        {
+            //HAY QUE HACER QUE SE CIERRE TODO Y DIGA UN MSJ SI GANASTE O PERDISTE
+        }
     }
     }
     return verificacionPalabra;
