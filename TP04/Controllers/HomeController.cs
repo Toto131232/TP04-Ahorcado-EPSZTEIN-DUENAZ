@@ -15,21 +15,21 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        string[] palabra=Palabrabd.IniciarPalabra();
+        string palabra=Palabrabd.IniciarPalabra();
         ViewBag.palabra=palabra;
-        return View();
+        return View("Index");
     }
     public IActionResult IngresarLetras(char letra)
     {
         List<int> PosicionesLetras=Palabrabd.VerificarLetra(letra);
         ViewBag.PosicionesLetras=PosicionesLetras;
-        return View();
+        return View("Index");
     }
     public IActionResult IngresarPalabras(string palabra)
     {
         bool laPalabraEsCorrecta=Palabrabd.VerificarPalabra(palabra);
         ViewBag.laPalabraEsCorrecta=laPalabraEsCorrecta;
-        return View();
+        return View("Index");
     }
     
 

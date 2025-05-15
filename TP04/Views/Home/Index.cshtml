@@ -4,8 +4,9 @@
 
 <div>
     <h1>Bienvenido al ahorcado!!!!!!!!!</h1>
-    <form method="post">
-    <p>Ingrese la letra</p>
+    <p>Letras utilizadas:@ViewBag.
+    <form action='@Url.Action("IngresarLetras","Index")'>
+    <input type="text" name="letra" placeholder="Ingrese la letra"/><br/>
+     <input type="text" name="palabra" placeholder="Ingrese la palabra"/><br/>
     </form>
-    <input 
 </div>
