@@ -3,6 +3,7 @@ public class Palabrabd
 public static string PalabraAAdivinar{get; private set;}=IniciarPalabra();
 public static int IntentosLetras=0;
 public static List<char> LetrasUtilizadas=new List<char>();
+public static int CantLetras=PalabraAAdivinar.Length;
 
 public static string IniciarPalabra()
 {

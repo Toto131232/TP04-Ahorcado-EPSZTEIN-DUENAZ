@@ -4,9 +4,25 @@
 
 <div>
     <h1>Bienvenido al ahorcado!!!!!!!!!</h1>
-    <p>Letras utilizadas:@ViewBag.
-    <form action='@Url.Action("IngresarLetras","Index")'>
+    @foreach(char l in ViewBag.palabra)
+    {
+        <h1 style="display: inline; margin-right:5px;">@l.ToString().ToUpper()</h1>
+    }
+    <p>Letras utilizadas:</p>
+    @foreach(char j in ViewBag.letrasUtilizadas)
+    {
+        <p>@ViewBag.CantLetras</p>
+    }
+        <p>Intentos:@ViewBag.Intentos</p>
+    <form action="@Url.Action("IngresarLetras","Home")">
     <input type="text" name="letra" placeholder="Ingrese la letra"/><br/>
-     <input type="text" name="palabra" placeholder="Ingrese la palabra"/><br/>
+     <input type="submit" value="Enviar form">
+      <input type="reset" value="reset form">
+    </form>
+     <form action="@Url.Action("IngresarPalabras","Home")">
+    <input type="text" name="Palabra" placeholder="Ingrese la Palabra"/><br/>
+     <input type="submit" value="Enviar form">
+      <input type="reset" value="reset form">
     </form>
 </div>
+

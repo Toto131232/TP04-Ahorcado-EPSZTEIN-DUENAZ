@@ -16,8 +16,12 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         string palabra=Palabrabd.IniciarPalabra();
+        int Intentos=Palabrabd.IntentosLetras;
+        List<char> letrasUtilizadas=Palabrabd.LetrasUtilizadas;
         ViewBag.palabra=palabra;
-        return View("Index");
+        ViewBag.letrasUtilizadas=letrasUtilizadas;
+        
+        return View();
     }
     public IActionResult IngresarLetras(char letra)
     {
