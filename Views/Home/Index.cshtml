@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<div>
+    <h1>Bienvenido al ahorcado!!!!!!!!!(Solo mayusculas)</h1>
+</div>
+
+<div>
+    @foreach(char l in ViewBag.PalabraOculta)
+    {
+        <h1 style="display: inline; margin-right:5px;">@l.ToString().ToUpper()</h1>
+    }
+    
+    
+</div>
+
+<div>
+    <p>Letras utilizadas:</p>
+    @if(ViewBag.letrasUtilizadas!=null)
+    {
+    foreach(char j in ViewBag.LetrasUtilizadas)
+    {
+        <p style="display: inline; margin-right:5px;">@j.ToString().ToUpper()</p>
+    }
+    }
+        <p>Intentos:</strong>@ViewBag.Intentos</p>
+</div>
+
+<div>
+    <form action='@Url.Action("IngresarLetras","Home")' method="POST" enctype="multipart/form-data">
+    <input type="text" name="letra" placeholder="Ingrese la letra"/><br/>
+     <input type="submit" value="Enviar form">
+      <input type="reset" value="Reset form">
+    </form>
+     <form action="@Url.Action("IngresarPalabras","Home")">
+    <input type="text" name="Palabra" placeholder="Ingrese la Palabra"/><br/>
+     <input type="submit" value="Enviar form">
+      <input type="reset" value="Reset form">
+    </form>
+</div>
